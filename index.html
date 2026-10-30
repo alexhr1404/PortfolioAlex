@@ -3,137 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Alejandro Hernández | Creador de videojuegos</title>
-	<style>
-		body {
-			margin: 0;
-			background: #101711;
-			color: #f0f2e7;
-			font-family: Arial, sans-serif;
-			line-height: 1.6;
-		}
-
-		.contenedor {
-			width: min(100% - 40px, 1000px);
-			margin: 0 auto;
-		}
-
-		header, section, footer { padding: 28px 0; }
-		header, section { border-bottom: 1px solid #354137; }
-
-		nav, .inicio, .proyectos, .contacto {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 24px;
-		}
-
-		nav a, .boton { color: #eaff62; text-decoration: none; }
-		nav div { display: flex; flex-wrap: wrap; gap: 20px; }
-		.nombre { font-weight: bold; }
-
-		.inicio { min-height: 390px; }
-		.inicio > div, .inicio img { width: 50%; }
-		.tarjeta img { display: block; width: 100%; object-fit: cover; }
-		.inicio img { display: block; width: 50%; max-height: 350px; object-fit: cover; }
-
-		h1 { margin: 0; font-size: clamp(42px, 8vw, 72px); line-height: 1.05; }
-		h1 span, h2 span { color: #eaff62; }
-		h2 { font-size: 32px; }
-		.etiqueta { color: #70efd0; font-family: monospace; }
-		.boton {
-			display: inline-block;
-			margin-top: 12px;
-			padding: 10px 16px;
-			background: #eaff62;
-			color: #101711;
-			font-weight: bold;
-		}
-
-		.habilidades { display: flex; flex-wrap: wrap; gap: 10px; }
-		.habilidades span { padding: 6px 10px; border: 1px solid #70efd0; color: #70efd0; }
-		.proyectos { align-items: stretch; }
-		.tarjeta { width: 50%; }
-		.tarjeta img { aspect-ratio: 16 / 9; }
-		.tarjeta p { color: #b2b9aa; }
-
-		.contacto { background: #eaff62; color: #101711; padding: 24px; }
-		.contacto h2 { margin: 0; }
-		.contacto a { color: #101711; font-weight: bold; }
-		footer { color: #b2b9aa; font-size: 14px; }
-
-		@media (max-width: 650px) {
-			nav, .inicio, .proyectos, .contacto { align-items: flex-start; flex-direction: column; }
-			.inicio { padding: 50px 0; }
-			.inicio > div, .inicio img, .tarjeta { width: 100%; }
-		}
-	</style>
-</head>
-<body>
-	<header>
-		<nav class="contenedor">
-			<a class="nombre" href="#inicio">AH | Alejandro Hernández</a>
-			<div>
-				<a href="#sobre-mi">Sobre mí</a>
-				<a href="#juegos">Juegos</a>
-				<a href="#contacto">Contacto</a>
-			</div>
-		</nav>
-	</header>
-
-	<main>
-		<section class="inicio contenedor" id="inicio">
-			<div>
-				<p class="etiqueta">CREADOR DE VIDEOJUEGOS</p>
-				<h1>Creo mundos<br>jugables<span>_</span></h1>
-				<p>Diseño experiencias interactivas y convierto ideas en juegos para explorar.</p>
-				<a class="boton" href="#juegos">Ver mis proyectos</a>
-			</div>
-			<img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1000&q=85" alt="Setup para jugar y crear videojuegos">
-		</section>
-
-		<section class="contenedor" id="sobre-mi">
-			<p class="etiqueta">01 / PERFIL</p>
-			<h2>Sobre mí</h2>
-			<p>Me especializo en animación y UX/UI. Trabajo principalmente con Unity, aunque también he tocado Unreal Engine y AGS, y herramientas como 3DS MAX para animación de personajes y escenarios.</p>
-			<div class="habilidades">
-				<span>[Unity o Unreal]</span>
-				<span>[C# o C++]</span>
-				<span>[Diseño de juego]</span>
-			</div>
-		</section>
-
-		<section class="contenedor" id="juegos">
-			<p class="etiqueta">02 / PROYECTOS</p>
-			<h2>Juegos y prototipos</h2>
-			<div class="proyectos">
-				<article class="tarjeta">
-					<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Máquinas arcade">
-					<h3>[Nombre del juego]</h3>
-					<p>[Tu rol] · [Motor] · [Año]</p>
-				</article>
-				<article class="tarjeta">
-					<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Evento de videojuegos">
-					<h3>[Nombre del prototipo]</h3>
-					<p>[Tu rol] · [Plataforma] · [Año]</p>
-				</article>
-			</div>
-		</section>
-
-		<section class="contacto contenedor" id="contacto">
-			<h2>¿Creamos algo <span>jugable?</span></h2>
-			<a href="mailto:tu-correo@ejemplo.com">Escríbeme</a>
-		</section>
-	</main>
-
-	<footer class="contenedor">© 2026 Alejandro Hernández</footer>
-</body>
-</html>
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#101711">
 	<meta name="description" content="Portfolio de Alejandro Hernández, creador de videojuegos. Proyectos, prototipos y mundos interactivos.">
 	<title>Alejandro Hernández — Game Developer</title>
@@ -332,6 +201,8 @@
 		.work-section { background: #18221b; }
 		.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 		.project { min-width: 0; }
+		.project-link { display: block; color: inherit; text-decoration: none; }
+		.project-link:focus-visible { outline: 2px solid var(--orange); outline-offset: 5px; }
 		.project-image-wrap { position: relative; overflow: hidden; aspect-ratio: 1.45; border: 1px solid var(--line); background: #25372f; }
 		.project-image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
 		.project:hover img { transform: scale(1.035); }
@@ -348,6 +219,9 @@
 		.contact-section h2 span { color: var(--green); }
 		.contact-section .button { flex: 0 0 auto; border-color: var(--paper); background: var(--paper); color: var(--ink); }
 		.contact-section .button:hover { background: var(--green); border-color: var(--green); }
+		.contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+		.contact-section .linkedin-link { border-color: var(--paper); background: transparent; color: var(--paper); }
+		.contact-section .linkedin-link:hover { border-color: var(--paper); background: var(--paper); color: var(--ink); }
 		footer { padding-block: 23px; background: var(--paper); color: var(--muted); }
 		.footer-inner { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); padding-top: 20px; font-family: "DM Mono", monospace; font-size: 11px; }
 		.footer-inner p { margin: 0; }
@@ -420,8 +294,8 @@
 					<a class="text-link" href="#sobre-mi">Mi perfil de creador</a>
 				</div>
 			</div>
-			<div class="hero-visual" aria-label="Setup de videojuegos">
-				<img class="hero-photo" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85" alt="Setup de videojuegos con pantallas y equipo de juego" fetchpriority="high">
+			<div class="hero-visual" aria-label="Imagen de perfil de Alejandro Hernández" role="img">
+				<img class="hero-photo" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85" alt="Foto de perfil" fetchpriority="high">
 				<div class="visual-frame"></div>
 				<div class="visual-note"><span class="note-dot" aria-hidden="true"></span><span>DEV MODE<br>Ideas en juego.</span></div>
 			</div>
@@ -439,12 +313,14 @@
 				<div class="about-grid">
 					<p class="about-label">01 / Mi enfoque</p>
 					<div class="about-copy">
-						<p>Me especializo en [diseño de juego / programación / arte / narrativa]. Me gusta crear experiencias que [objetivo o sensación que quieres provocar].</p>
-						<p>Actualmente trabajo con [motor de juego], usando [lenguajes y herramientas]. Aquí puedes añadir tu experiencia, formación y el tipo de proyectos que buscas.</p>
+						<p>Me especializo en animación y UX/UI. Trabajo principalmente con Unity, aunque también he tocado Unreal Engine y AGS, y herramientas como 3DS MAX para animación de personajes y escenarios.</p>
 						<div class="skills" aria-label="Herramientas y especialidades">
-							<span class="skill">[UNITY / UNREAL]</span>
-							<span class="skill">[C# / C++]</span>
-							<span class="skill">[GAME DESIGN]</span>
+							<span class="skill">ANIMACIÓN</span>
+							<span class="skill">UX/UI</span>
+							<span class="skill">UNITY</span>
+							<span class="skill">UNREAL ENGINE</span>
+							<span class="skill">AGS</span>
+							<span class="skill">3DS MAX</span>
 						</div>
 					</div>
 				</div>
@@ -455,31 +331,46 @@
 			<div class="wrap">
 				<div class="section-heading">
 					<div>
-						<p class="eyebrow">Builds // 2024—26</p>
+						<p class="eyebrow">Builds // 2023—26</p>
 						<h2 id="work-title">Juegos y prototipos</h2>
 					</div>
 					<p>De prototipos rápidos a mundos completos: una selección de proyectos.</p>
 				</div>
 				<div class="project-grid">
 					<article class="project">
-						<div class="project-image-wrap">
-							<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=80" alt="Máquinas arcade iluminadas en una sala de videojuegos" loading="lazy">
-							<span class="project-index">BUILD_001</span>
-						</div>
-						<div class="project-info">
-							<div><h3>[Nombre del juego]</h3><p>[Género] · [Motor] · [Año]</p></div>
-							<span class="project-arrow" aria-hidden="true">↗</span>
-						</div>
+						<a class="project-link" href="https://mippim.itch.io/time-trouble" target="_blank" rel="noopener noreferrer">
+							<div class="project-image-wrap">
+								<img src="https://img.itch.zone/aW1nLzE5NjgxNDcwLnBuZw==/315x250%23c/VOpe5G.png" alt="Videojuego de viaje en el tiempo con hordas de enemigos" loading="lazy">
+								<span class="project-index">BUILD_001</span>
+							</div>
+							<div class="project-info">
+								<div><h3>Time Trouble</h3><p>[Shooter,Survival] · [Unity] · [2025]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
 					</article>
 					<article class="project">
-						<div class="project-image-wrap">
-							<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80" alt="Jugador compitiendo en un evento de videojuegos" loading="lazy">
-							<span class="project-index">BUILD_002</span>
-						</div>
-						<div class="project-info">
-							<div><h3>[Nombre del prototipo]</h3><p>[Tu rol] · [Plataforma] · [Año]</p></div>
-							<span class="project-arrow" aria-hidden="true">↗</span>
-						</div>
+						<a class="project-link" href="https://laupaa.itch.io/el-enigma-de-la-torre-encantada" target="_blank" rel="noopener noreferrer">
+							<div class="project-image-wrap">
+								<img src="https://img.itch.zone/aW1nLzI0ODU3MTk1LmpwZw==/315x250%23c/rWlf3b.jpg" alt="Videojuego de magos tipo puzzle" loading="lazy">
+								<span class="project-index">BUILD_002</span>
+							</div>
+							<div class="project-info">
+								<div><h3>El enigma de la torre encantada</h3><p>[Puzzle] · [HTML5] · [2025]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
+					</article>
+					<article class="project">
+						<a class="project-link" href="https://lazysoftstudio.itch.io/el-secreto-de-monteviejo" target="_blank" rel="noopener noreferrer">
+							<div class="project-image-wrap">
+								<span class="project-index">BUILD_003</span>
+							</div>
+							<div class="project-info">
+								<div><h3>El Secreto de Monteviejo</h3><p>[Aventura] · [En desarrollo]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
 					</article>
 				</div>
 			</div>
@@ -491,7 +382,10 @@
 					<p class="eyebrow">¿Start a new game?</p>
 					<h2 id="contact-title">Creemos algo<br><span>jugable.</span></h2>
 				</div>
-				<a class="button" href="mailto:tu-correo@ejemplo.com">Escríbeme <span aria-hidden="true">↗</span></a>
+				<div class="contact-links">
+					<a class="button" href="mailto:alehernandez05@outlook.es">Escríbeme <span aria-hidden="true">↗</span></a>
+					<a class="button linkedin-link" href="https://www.linkedin.com/in/alejandro-hernández-ruiz-b52b10443/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+				</div>
 			</div>
 		</section>
 	</main>
