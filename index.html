@@ -162,12 +162,39 @@
 			object-fit: cover;
 			object-position: center 25%;
 		}
+		.hero-pixels {
+			position: absolute;
+			inset: 18px 22px 18px 34px;
+			width: calc(100% - 56px);
+			height: calc(100% - 36px);
+			border: 1px solid var(--line);
+			image-rendering: pixelated;
+			visibility: hidden;
+			opacity: 0;
+			transition: none;
+		}
 		.visual-frame {
 			position: absolute;
 			inset: 0 0 0 12px;
 			border: 1px solid var(--green);
 			border-radius: 0;
 			pointer-events: none;
+		}
+		.hero-visual.pixel-ready .hero-photo {
+			opacity: 0;
+		}
+		.hero-visual.pixel-ready .hero-pixels {
+			visibility: visible;
+			opacity: 1;
+		}
+		.hero-visual.pixel-ready:hover .hero-photo {
+			opacity: 1;
+			transition: opacity 240ms ease;
+		}
+		.hero-visual.pixel-ready:hover .hero-pixels {
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 240ms ease, visibility 0s linear 240ms;
 		}
 		.visual-note {
 			position: absolute;
@@ -297,6 +324,12 @@
 		}
 		@media (prefers-reduced-motion: reduce) {
 			*, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+			.hero-photo { opacity: 1 !important; animation: none !important; transition: none !important; }
+			.hero-pixels { display: none !important; animation: none !important; transition: none !important; }
+		}
+		@media (hover: none) {
+			.hero-visual.pixel-ready .hero-photo { opacity: 1; }
+			.hero-visual.pixel-ready .hero-pixels { display: none; }
 		}
 	</style>
 </head>
@@ -335,6 +368,7 @@
 			</div>
 			<div class="hero-visual" aria-label="Imagen de perfil de Alejandro Hernández" role="img">
 				<img class="hero-photo" src="graduacion.jpeg" alt="Alejandro Hernández en su graduación" fetchpriority="high">
+				<canvas class="hero-pixels" aria-hidden="true"></canvas>
 				<div class="visual-frame"></div>
 				<div class="visual-note"><span class="note-dot" aria-hidden="true"></span><span>DEV MODE<br>Ideas en juego.</span></div>
 			</div>
@@ -353,6 +387,7 @@
 					<p class="about-label">01 / Mi enfoque</p>
 					<div class="about-copy">
 						<p>Me especializo en animación 2D/3D y UX/UI. Trabajo principalmente con Unity, aunque también he trabajado con Unreal Engine y AGS, y herramientas como 3DS MAX para animación de personajes y escenarios.</p>
+						<p>He programado con lenguajes como C, C++, C#, Ensamblador, Processing, Java, JavaScript y CSS.</p>
 						<div class="skills" aria-label="Herramientas y especialidades">
 							<span class="skill">ANIMACIÓN</span>
 							<span class="skill">UX/UI</span>
@@ -584,6 +619,51 @@
 		});
 
 		document.querySelector('#year').textContent = new Date().getFullYear();
+
+		const heroVisual = document.querySelector('.hero-visual');
+		const portrait = heroVisual.querySelector('.hero-photo');
+		const pixelCanvas = heroVisual.querySelector('.hero-pixels');
+		const pixelContext = pixelCanvas.getContext('2d');
+
+		function startPixelIntro() {
+			if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !pixelContext) return;
+
+			const bounds = portrait.getBoundingClientRect();
+			if (!bounds.width || !bounds.height || !portrait.naturalWidth) return;
+
+			const pixelWidth = 36;
+			const pixelHeight = Math.max(1, Math.round(pixelWidth * bounds.height / bounds.width));
+			const imageRatio = portrait.naturalWidth / portrait.naturalHeight;
+			const frameRatio = bounds.width / bounds.height;
+			let sourceX = 0;
+			let sourceY = 0;
+			let sourceWidth = portrait.naturalWidth;
+			let sourceHeight = portrait.naturalHeight;
+
+			if (imageRatio > frameRatio) {
+				sourceWidth = portrait.naturalHeight * frameRatio;
+				sourceX = (portrait.naturalWidth - sourceWidth) / 2;
+			} else {
+				sourceHeight = portrait.naturalWidth / frameRatio;
+				sourceY = (portrait.naturalHeight - sourceHeight) * 0.25;
+			}
+
+			pixelCanvas.width = pixelWidth;
+			pixelCanvas.height = pixelHeight;
+			pixelContext.imageSmoothingEnabled = false;
+			pixelContext.drawImage(
+				portrait,
+				sourceX, sourceY, sourceWidth, sourceHeight,
+				0, 0, pixelWidth, pixelHeight
+			);
+			heroVisual.classList.add('pixel-ready');
+		}
+
+		if (portrait.complete) {
+			window.requestAnimationFrame(startPixelIntro);
+		} else {
+			portrait.addEventListener('load', startPixelIntro, { once: true });
+		}
 	</script>
 </body>
 </html>
