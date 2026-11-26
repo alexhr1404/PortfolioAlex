@@ -216,6 +216,13 @@
 		.animation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 		.animation-item { min-width: 0; }
 		.animation-item h3 { margin-bottom: 12px; font-size: 20px; }
+		.figma-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+		.figma-card { min-width: 0; border: 1px solid var(--line); background: #18221b; }
+		.figma-preview { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: 1px solid var(--line); background: #25372f; }
+		.figma-preview iframe { width: 100%; height: 100%; border: 0; background: #25372f; }
+		.figma-info { display: flex; align-items: start; justify-content: space-between; gap: 16px; padding: 18px; }
+		.figma-info h3 { margin-bottom: 5px; font-size: 20px; }
+		.figma-info p { margin: 0; color: var(--muted); font-family: "DM Mono", monospace; font-size: 12px; }
 		.animation-video {
 			display: block;
 			width: 100%;
@@ -224,6 +231,19 @@
 			background: #18221b;
 		}
 		.animation-note { margin: 12px 0 0; color: var(--muted); font-family: "DM Mono", monospace; font-size: 12px; }
+
+		.resume-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+		.resume-column { border-top: 1px solid var(--green); }
+		.resume-column h3 { margin: 18px 0 22px; font-size: 22px; }
+		.resume-item { position: relative; padding: 0 0 24px 22px; border-left: 1px solid var(--line); }
+		.resume-item:last-child { padding-bottom: 0; }
+		.resume-item::before { position: absolute; top: 5px; left: -5px; width: 9px; height: 9px; background: var(--orange); content: ""; }
+		.resume-period { margin-bottom: 7px; color: var(--green); font-family: "DM Mono", monospace; font-size: 12px; }
+		.resume-item h4 { margin: 0 0 5px; font-size: 17px; }
+		.resume-item p { margin: 0; color: var(--muted); font-size: 15px; }
+		.resume-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+		.resume-list li { padding-left: 16px; border-left: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+		.resume-list strong { color: var(--ink); }
 
 		.contact-section { padding-block: 100px; background: var(--orange); color: var(--paper); }
 		.contact-inner { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
@@ -268,7 +288,9 @@
 			.section-heading { align-items: start; flex-direction: column; gap: 15px; margin-bottom: 30px; }
 			.about-grid { grid-template-columns: 1fr; gap: 20px; }
 			.about-copy { font-size: 16px; }
+			.resume-grid { grid-template-columns: 1fr; gap: 38px; }
 			.project-grid { grid-template-columns: 1fr; gap: 32px; }
+			.figma-grid { grid-template-columns: 1fr; gap: 32px; }
 			.animation-grid { grid-template-columns: 1fr; gap: 32px; }
 			.contact-section { padding-block: 72px; }
 			.contact-inner { align-items: start; flex-direction: column; }
@@ -290,7 +312,9 @@
 			</button>
 			<div class="nav-links" id="nav-links">
 				<a href="#sobre-mi">Sobre mí</a>
+				<a href="#formacion">Formación</a>
 				<a href="#proyectos">Proyectos</a>
+				<a href="#ux-figma">UX / Figma</a>
 				<a href="#animacion">Animación</a>
 				<a class="nav-contact" href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
 			</div>
@@ -342,6 +366,43 @@
 			</div>
 		</section>
 
+		<section class="section" id="formacion" aria-labelledby="resume-title">
+			<div class="wrap">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Education // Training</p>
+						<h2 id="resume-title">Experiencia y formación</h2>
+					</div>
+					<p>Trayectoria académica, formación complementaria y participación en el ecosistema de videojuegos.</p>
+				</div>
+				<div class="resume-grid">
+					<div class="resume-column">
+						<h3>Formación académica</h3>
+						<div class="resume-item">
+							<p class="resume-period">IES GRAN CAPITÁN · MADRID</p>
+							<h4>Bachillerato en Ciencias Tecnológicas</h4>
+							<p>Título de Bachillerato y Educación Secundaria Obligatoria. Media de Bachillerato: 7,89.</p>
+						</div>
+						<div class="resume-item">
+							<p class="resume-period">ACTUALIDAD</p>
+							<h4>Grado en Diseño y Desarrollo de Videojuegos</h4>
+							<p>Universidad Rey Juan Carlos, Móstoles. Último año cursando.</p>
+						</div>
+					</div>
+					<div class="resume-column">
+						<h3>Formación complementaria</h3>
+						<ul class="resume-list">
+							<li><strong>2021 · Conecta Empleo Telefónica</strong><br>Introducción a la programación.</li>
+							<li><strong>2021 · Conecta Empleo Telefónica</strong><br>Introducción al diseño de videojuegos.</li>
+							<li><strong>2022 · U-tad</strong><br>Introducción al diseño de videojuegos con Unreal Engine y diseño de entornos virtuales.</li>
+							<li><strong>2022 · U-tad</strong><br>Asistencia a charla de Illusorium Studios.</li>
+							<li><strong>Madrid in Game</strong><br>Asistencia a charlas y ponencias sobre videojuegos indie.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="section work-section" id="proyectos" aria-labelledby="work-title">
 			<div class="wrap">
 				<div class="section-heading">
@@ -379,11 +440,70 @@
 					<article class="project">
 						<a class="project-link" href="https://lazysoftstudio.itch.io/el-secreto-de-monteviejo" target="_blank" rel="noopener noreferrer">
 							<div class="project-image-wrap">
+								<img src="https://img.itch.zone/aW1nLzMyMTAxMjM3LmpwZWc=/315x250%23c/za1mTQ.jpeg" alt="El Secreto de Monteviejo" loading="lazy">
 								<span class="project-index">BUILD_003</span>
 								<span class="project-status">EN DESARROLLO</span>
 							</div>
 							<div class="project-info">
 								<div><h3>El Secreto de Monteviejo</h3><p>[Aventura] · [En desarrollo]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section work-section" id="ux-figma" aria-labelledby="figma-title">
+			<div class="wrap">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">UX / UI // Figma</p>
+						<h2 id="figma-title">Diseño de interfaces</h2>
+					</div>
+					<p>Cuatro proyectos de diseño UX/UI, prototipos y sistemas visuales creados en Figma.</p>
+				</div>
+				<div class="figma-grid">
+					<article class="figma-card">
+						<div class="figma-preview">
+							<iframe title="El Secreto de Monteviejo UX" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2F8gnfV4lAb7YHA9q6cWkt4T%2FJuego-de-LazySoft" allowfullscreen loading="lazy"></iframe>
+						</div>
+						<a class="project-link" href="https://www.figma.com/design/8gnfV4lAb7YHA9q6cWkt4T/Juego-de-LazySoft" target="_blank" rel="noopener noreferrer">
+							<div class="figma-info">
+								<div><h3>El Secreto de Monteviejo UX</h3><p>[UX/UI] · [Figma]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
+					</article>
+					<article class="figma-card">
+						<div class="figma-preview">
+							<iframe title="LazyPoly UX" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FM7SSzMqdnKlcpLsaQ62f7n%2FSin-t%25C3%25ADtulo" allowfullscreen loading="lazy"></iframe>
+						</div>
+						<a class="project-link" href="https://www.figma.com/design/M7SSzMqdnKlcpLsaQ62f7n/Sin-t%C3%ADtulo" target="_blank" rel="noopener noreferrer">
+							<div class="figma-info">
+								<div><h3>LazyPoly UX</h3><p>[UX/UI] · [Figma]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
+					</article>
+					<article class="figma-card">
+						<div class="figma-preview">
+							<iframe title="LazyGeo UX" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FOmx0qyghlJanw7plmLDVUk%2FIPM%3Fnode-id%3D0-1" allowfullscreen loading="lazy"></iframe>
+						</div>
+						<a class="project-link" href="https://www.figma.com/design/Omx0qyghlJanw7plmLDVUk/IPM?node-id=0-1" target="_blank" rel="noopener noreferrer">
+							<div class="figma-info">
+								<div><h3>LazyGeo UX</h3><p>[UX/UI] · [Figma]</p></div>
+								<span class="project-arrow" aria-hidden="true">↗</span>
+							</div>
+						</a>
+					</article>
+					<article class="figma-card">
+						<div class="figma-preview">
+							<iframe title="Proyecto Wireframes" src="https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FVTMscsiGjXZjyecmlojhxk%2FPROYECTO-WIREFRAMES%3Fnode-id%3D0-1" allowfullscreen loading="lazy"></iframe>
+						</div>
+						<a class="project-link" href="https://www.figma.com/design/VTMscsiGjXZjyecmlojhxk/PROYECTO-WIREFRAMES?node-id=0-1" target="_blank" rel="noopener noreferrer">
+							<div class="figma-info">
+								<div><h3>Proyecto Wireframes</h3><p>[Wireframes] · [Figma]</p></div>
 								<span class="project-arrow" aria-hidden="true">↗</span>
 							</div>
 						</a>
@@ -431,6 +551,7 @@
 				<div class="contact-links">
 					<a class="button" href="mailto:alehernandez05@outlook.es">Escríbeme <span aria-hidden="true">↗</span></a>
 					<a class="button linkedin-link" href="https://www.linkedin.com/in/alejandro-hernández-ruiz-b52b10443/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+					<a class="button linkedin-link" href="Alejandro%20Hern%C3%A1ndez%20Ruiz%20CV%20actualizado.pdf" download="Alejandro Hernandez Ruiz CV.pdf">Descargar CV <span aria-hidden="true">↓</span></a>
 				</div>
 			</div>
 		</section>
